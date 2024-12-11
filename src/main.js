@@ -4,6 +4,10 @@ var posterTitle = document.querySelector('.poster-title')
 var posterQuote = document.querySelector('.poster-quote')
 var showRandomButton = document.querySelector('.show-random')
 var showMakePosterButton = document.querySelector('.make-poster')
+var savedPostersButton = document.querySelector(".show-saved")
+var mainPosterSection = document.querySelector(".main-poster")
+var posterFormSectionLand = document.querySelector(".poster-form") 
+var createPosterButton = document.querySelector(".show-form")
 
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
@@ -109,9 +113,9 @@ var currentPoster;
 
 // event listeners go here 👇
 window.addEventListener('load', displayRandomPoster)
-window.addEventListener('load', displayMakePoster)
 showRandomButton.addEventListener('click', displayRandomPoster)
-showMakePosterButton.addEventListener('click', displayMakePoster)
+//backToMainButton.addEventListener('click', showMainView)
+createPosterButton.addEventListener('click', showMakePoster)
 
 
 // functions and event handlers go here 👇
@@ -138,4 +142,7 @@ function displayRandomPoster(){
   posterQuote.innerText = randomPoster.quote
 }
 
-function 
+function showMakePoster(){
+  posterFormSectionLand.classList.remove("hidden")
+  mainPosterSection.classList.add("hidden")
+}
